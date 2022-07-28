@@ -1,0 +1,54 @@
+<div class="login">
+  <h1>Prediksi Data Pelamar</h1>
+
+  <!-- Main Input For Receiving Query to our ML -->
+  <form action="{{ url_for('predict')}}" method="post">
+    <br>
+    		<label for="Kota Domisili">Kota Domisili</label>
+    		<select id="Kota Domisili" name="Kota Domisili" required="required">
+      			<option value="0">Luar Wilayah Tangerang</option>
+      			<option value="1">Wilayah Tangerang</option>
+    		</select>
+    		<br>
+	    	<label for="Usia">Usia</label>
+    		<select id="Usia" name="Usia" required="required">
+      			<option value="0">Diatas 30th</option>
+      			<option value="1">Dibawah 30th</option>
+    		</select>
+    		<br>
+    		<label for="Tingkat Pendidikan">Tingkat Pendidikan</label>
+    		<select id="Tingkat Pendidikan" name="Tingkat Pendidikan" required="required">
+      			<option value="0">D3</option>
+      			<option value="1">S1</option>
+      			<option value="2">SMA/SMK</option>
+    		</select>
+    		<br>
+		    <label for="Posisi Yang Dilamar">Posisi Yang Dilamar</label>
+    		<select id="Posisi Yang Dilamar" name="Posisi Yang Dilamar" required="required">
+      			<option value="0">Sales Marketing</option>
+      			<option value="1">Telemarketing</option>
+      			<option value="2">Telesales</option>
+    		</select>
+    		<br>
+    		<label for="Pengalaman Pekerjaan">Pengalaman Pekerjaan</label>
+    		<select id="Pengalaman Pekerjaan" name="Pengalaman Pekerjaan" required="required">
+      			<option value="0">Tidak ada</option>
+      			<option value="1">Ada</option>
+    		</select>
+    		<br>
+    		<label for="Status Kelengkapan">Status Kelengkapan</label>
+    		<select id="Status Kelengkapan" name="Status Kelengkapan" required="required">
+      			<option value="0">Tidak Lengkap</option>
+      			<option value="1">Lengkap</option>
+    		</select>
+    		<br>
+
+    <button type="submit" class="btn btn-primary btn-block btn-large">
+      Predict
+    </button>
+  </form>
+
+  <br />
+  <br />
+  {{ prediction_text }}
+</div>
